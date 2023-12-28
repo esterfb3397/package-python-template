@@ -4,9 +4,15 @@ on:
     branches: [master,main]
   pull_request:
     branches: [master,main]
+env:
+  PYTHON_VERSION: "3.10"
 jobs:
   install-test-coverage:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Hello World
-        run: echo "Hello World" 
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup python versions
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
