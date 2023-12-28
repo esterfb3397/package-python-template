@@ -16,7 +16,7 @@ RUN . /venv/bin/activate && poetry install --without dev --no-root
 
 COPY . .
 
-RUN ./venv/bin/activate && poetry build
+RUN . /venv/bin/activate && poetry build
 
 FROM python:$PYTHON_VERSION-slim-buster
 
@@ -25,6 +25,6 @@ WORKDIR /app
 COPY --from=builder /venv /venv
 COPY --from=builder /app/dist .
 
-RUN ./venv/bin/activate && pip install *.whl && \
+RUN . /venv/bin/activate && pip install *.whl && \
     rm -f *.whl && \
     rm -f *.tar.gz
