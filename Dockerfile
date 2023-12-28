@@ -16,7 +16,7 @@ RUN . /venv/bin/activate && poetry install --without dev --no-root
 
 COPY . .
 
-RUN ./venv/bin/activate && poetry builder
+RUN ./venv/bin/activate && poetry build
 
 FROM python:$PYTHON_VERSION-slim-buster
 
