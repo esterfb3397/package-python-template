@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "template"
+version = "0.1.0"
+description = "Template"
+authors = ["Esther Fernández Barchín <estherfb_3397@hotmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.dev-dependencies]
+black = {version = "23.11.*", allow-prereleases = true}
+pytest = "7.4.*"
+pytest-html = "4.1.*"
+pytest-cov = "4.1.*"
+pylint = "3.0.*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
